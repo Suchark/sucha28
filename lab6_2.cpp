@@ -10,10 +10,10 @@ double rad2deg(double a2){
     return (a2*180)/M_PI;
 }
 
-double findXComponent(double l1, double l2, double a1, double a2){
+double findXComponent(double a1, double a2, double l1, double l2){
     return l1*cos(a1) + l2*cos(a2);
 }
-double findYComponent(double l1, double l2, double a1, double a2){
+double findYComponent(double a1, double a2, double l1, double l2){
     return l1*sin(a1) + l2*sin(a2);
 }
 double pythagoras(double x, double y){
@@ -40,8 +40,8 @@ cin >> a2;
     
 a1 = deg2rad(a1);
 a2 = deg2rad(a2);
-xcomp = findXComponent(l1,l2,a1,a2);
-ycomp = findYComponent(l1,l2,a1,a2);
+xcomp = findXComponent(a1,a2,l1,l2);
+ycomp = findYComponent(a1,a2,l1,l2);
 result_vec_length = pythagoras(xcomp,ycomp);
 result_vec_direction = rad2deg(atan2(ycomp,xcomp)); 
 
